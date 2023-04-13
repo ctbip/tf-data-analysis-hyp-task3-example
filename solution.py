@@ -4,13 +4,9 @@ from scipy.stats import ttest_ind
 
 chat_id = 784892881 # Ваш chat ID, не меняйте название переменной
 
-def solution(x) -> bool: # Одна или две выборке на входе, заполняется исходя из условия
-    
-    if len(x)==1:
-        t_stat, p_val = ttest_ind(x, x)
-    else:
-        t_stat, p_val = ttest_ind(x[0], x[1])
+def solution(x, y) -> bool: # Одна или две выборке на входе, заполняется исходя из условия
 
+    t_stat, p_val = ttest_ind(x, y)
     significance_level = 0.06
     
     if p_val < significance_level:
